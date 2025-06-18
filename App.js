@@ -2,12 +2,11 @@
 import { StyleSheet, Text, View, ActivityIndicator, TextInput } from 'react-native';
 import { PickerItem } from './src/Picker';
 import { useEffect, useState } from 'react';
-import { api } from './src/services/api';
 import { fetch } from 'expo/fetch';
   
 function App(){
   const [coins, setCoins] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [selectedCoin, setSelectedCoin] = useState(null);
 
 
