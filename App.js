@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ActivityIndicator, TextInput } from 'react-nati
 import { PickerItem } from './src/Picker';
 import { useEffect, useState } from 'react';
 import { api } from './src/services/api';
+import { fetch } from 'expo/fetch';
   
 function App(){
   const [coins, setCoins] = useState([]);
@@ -13,7 +14,7 @@ function App(){
   useEffect( () => {
 
     const loadCoins = async () => {
-        const response = await api.get('all');
+        const response = await fetch('https://economia.awesomeapi.com.br/json/all');
           let arrayCoins = [];
           Object.keys(response.data).map( (key) => {
             arrayCoins.push(
